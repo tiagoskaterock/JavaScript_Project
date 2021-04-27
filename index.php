@@ -10,20 +10,21 @@
 <body>
 
 	<div class="container">
-
-		<?php
-			foreach ($cars as $car) {
-				?>
-				<div class="carimages grid">			
+		<ul>
+			<div class="carimages grid">	
+				<?php
+					foreach ($cars as $car) {
+						?>
 						<div class="col-sm-4 image grid-item">
 							<a href="#" class="thumbnail">						
 								<img src="images/<?= $car['img'] ?>" alt="<?= $car['alt'] ?>" class="img-responsive">
 							</a>					
 						</div>
-				</div>
-				<?php
-			}
-		?>
+						<?php
+					}
+					?>
+			</div>
+		</ul>
 		
 	</div>
 
