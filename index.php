@@ -3,9 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Document</title>
+	<title>Mastering the Dom</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/thumbnail-gallery.css">	
+	<style>
+		body{
+			background-color: #eeeeee;
+		}
+	</style>
 </head>
 <body>
 
