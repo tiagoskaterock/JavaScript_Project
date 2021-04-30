@@ -20,16 +20,48 @@
 			overlay.style.width = window.innerWidth + 'px';
 			overlay.style.height = window.innerWidth + 'px';
 
-			// console.log(overlay.style.background);
-
+			// append the overlay to the body
 			document.body.appendChild(overlay);
 
-		}
+			// get tye image source
+			var imageSrc = e.target.src;
 
-		// console.log(e.target.tagName);
+			// create the image
+			var popUpImage = document.createElement('img');
+			popUpImage.id = 'popimage';
+			popUpImage.src = imageSrc;
+
+			// style the image
+			popUpImage.style.display = 'block';
+			popUpImage.style.width = '50%';
+			popUpImage.style.margin = '0 auto';
+			popUpImage.style.marginTop = '10%';
+
+			// append the image to the overlay
+			overlay.appendChild(popUpImage);
+
+			popUpImage.addEventListener('click', function(){
+				if (overlay) {
+					overlay.parentElement.removeChild(overlay);
+				}
+			});
+
+		}		
 
 	});
 
-	
+	// set overlay to follow window scroll
+	window.addEventListener('scroll', function(){
+		if (overlay) {
+			overlay.style.top = window.pageYOffset + 'px';
+			overlay.style.left = window.pageXOffset + 'px';			
+		}
+	});
+
+	// resize the overlay with the window
+	window.addEventListener('resize', function(){
+		overlay.style.width = window.innerWidth + 'px';
+		overlay.style.height = window.innerHeight + 'px';
+	});
 
 }());
